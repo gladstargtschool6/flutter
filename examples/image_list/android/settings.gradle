@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-include ':app'
+include ':app', ':mlkit-translate:app', ':mlkit-langid:app', ':app-indexing:app', ':mlkit-smartreply:app', ':inappmessaging:app', ':mlkit:app', ':functions:app', ':perf:app', ':admob:app', ':internal:lint', ':internal:lintchecks', ':database:app', ':firestore:app', ':config:app', ':storage:app', ':auth:app', ':messaging:app', ':crash:app', ':internal:chooserx', ':dynamiclinks:app', ':analytics:app', ':gladstargtschool', ':wgladstargiftedandtalentedschool_9453692', ':Application'
 
 def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
 def properties = new Properties()
