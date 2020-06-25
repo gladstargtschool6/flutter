@@ -4,9 +4,292 @@ Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file. -->
 <html>
     <head>
-        <title>Hello, World</title>
-    </head>
-    <body>
+        <title>Gladstar Gifted and Talented School</title>
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ajaxGetContent.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+<style>
+      * {
+  box-sizing: border-box;
+}
+
+.site-header {
+  border-top: 1rem solid #556CF6;
+  background: #26232d;
+  padding: 2rem;
+  position: relative;
+}
+.site-title {
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+.site-subtitle {
+  font-style: italic;
+  opacity: 0.5;
+}
+.sign-in-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.site-wrap {
+  padding: 2rem;
+}
+
+.article-block {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  background: #403E4F;
+  padding: 2rem;
+  box-shadow: 0.25rem 0.25rem 1.3rem rgba(0, 0, 0, 0.33);
+}
+time {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  background: linear-gradient(
+    to right,
+    #4a4c5a,
+    #403E4D
+  );
+  font-size: 0.75rem;
+}
+.article-body {
+  color: #9e9fa8;
+}
+
+.article-whole {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
+body {
+  margin: 0;
+  background: #323041;
+  color: white;
+  font-family: 'PT Serif', serif;
+  line-height: 1.4;
+}
+h1, h2, h3, h4, h5, h6,
+.site-title {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+}
+h1 {
+  font-size: 3.0rem;
+  letter-spacing: 0.1rem;
+}
+a {
+  color: #8b9bff;
+  font-weight: bold;
+  border-bottom: 1px solid;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;  
+}
+a:hover,
+a:focus {
+  background: rgba(0, 0, 0, 0.33);
+}
+</style>
+</head>
+<body>
+    <h1 data-app-name>Gladstar Gifted and Talented School</h1>
+     Facilitating Functional Education For Next Innovators, Entrepreneurs and Leaders. 
+  <p><strong>Search For Your Learning Resources</strong></p>
+  <script async src="https://cse.google.com/cse.js?cx=partner-pub-7518766331039540:2777009957"></script>
+  <div class="gcse-searchbox-only"></div>
+  
+<div>
+<!-- Ad -->
+        <b:if cond='data:post.includeAd'>
+          <div class='inline-ad'>
+            <data:1639191272987391_2360388014201043,1639191272987391_2555614208011755/>
+          </div>
+    <script>
+     $(function()
+    {
+    
+        $('a').ajaxGetContent( {
+           
+            //basic URL
+            baseUrl : 'https://www.blogger.com/feeds/6526955677982829352/archive',
+           
+            onSend : function(url)
+            {
+                //set low opacity for content while AJAX call is performed
+                $('#ajax-load-area').css('opacity', 0.5);
+            },
+    
+            onReceive : function(data, status)
+            {
+                data = $($.parseHTML(data, document, true));
+                 //for jQuery < 1.9: data = $(data);
+    
+                if (status == 'success')
+                {
+                    //insertion of received content
+                    $($.parseHTML(data, document, true));
+                   
+                    //scroll to top
+                    $.fn.ajaxGetContent.scrollTo('#head');
+    
+                    //initialization of scripts, e.g. slider
+                    initAllScripts();
+                   
+                    //Google Analytics - add current subpage to statistics
+                    if (window._gaq)
+                        _gaq.push(['_trackPageview', $.fn.ajaxGetContent.getCurrentUrl()]);
+                }
+    
+                //restore opacity for content
+                $('#ajax-load-area').css('opacity', 1);
+            }
+    
+        });
+    
+    });
+  </script>
+<div><script async='false' src="/https://cdn.firebase.com/js/client/7.14.2/firebase-app.js"></script>
+
+   <!-- Initialize Firebase -->
+        <script async='false' src="/https://cdn.firebase.com/js/clent/7.14.2/init.js"></script>
+       <script async='false' src="/https://cdn.firebase.com/js/client/7.14.2/firebase-auth.js"></script>
+
+       <script async='false' src="/https://cdn.firebase.com/js/client/7.14.2/firebase-functions.js"></script>
+
+       <script async='false' src="/https://cdn.firebase.com/js/client/7.14.2/firebase-remote-config.js"></script>
+      
+       <script async='false' src="/https://cdn.firebase.com/js/client/7.14.2/firebase-ads.js"></script>
+       <script async='false' src="https://cdn.firebase.com/js/client/7.14.2/firebase.js"></script>
+       <script async='false' src="https://cdn.firebase.com/js/simple-login/7.14.2/firebase-simple-login.js"></script>
+       
+       <script>
+           // TODO: Replace the following with your app's Firebase project configuration//
+var firebaseConfig = {
+    apiKey: "AIzaSyCVgTBrHMK808-huXDbEsx5nDmyPwbxiLI",
+    authDomain: "gladstar.sch.ng",
+    databaseURL: "https://marine-infinity-244511.firebaseio.com",
+    projectId: "marine-infinity-244511",
+    storageBucket:"marine-infinity-244511.appspot.com" ,
+    messagingSenderId: "web:ZGU5YTEyYTUtYTNmZi00MDA4LWExNTMtYTc0OWY4OTAxYmY1",
+    appId: "1:61216389060:web:ce5a28284874fd514b5691",
+    measurementId: "G-measurement-id",
+    };
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Initialize Firebase with a "default" Firebase project
+var defaultProject = firebase.initializeApp(firebaseConfig);
+
+console.log(defaultProject.name);  // "[DEFAULT]"
+
+// Option 1: Access Firebase services via the defaultProject variable
+var defaultStorage = defaultProject.storage();
+var defaultFirestore = defaultProject.firestore();
+
+// Option 2: Access Firebase services using shorthand notation
+defaultStorage = firebase.storage();
+defaultFirestore = firebase.firestore();
+
+     function authService($firebaseAuth, firebaseDataService, cityTimerService) {
+    var firebaseAuthObject = $firebaseAuth();
+    var service = {
+       firebaseAuthObject: firebaseAuthObject,
+       register: register,
+       login: login,
+       logout: logout,
+       isLoggedIn: isLoggedIn,
+       sendWelcomeEmail: sendWelcomeEmail
+    };
+    return service;
+    ////////////
+    function register(user) {
+       return firebaseAuthObject.$createUserWithEmailAndPassword(user.email, 
+
+user.password);
+    }
+    function login(user) {
+       return firebaseAuthObject.$signInWithEmailAndPassword(user.email, user.password);
+    }
+    function logout() {
+       cityTimerService.reset();
+       firebaseAuthObject.$signOut();
+    }
+    function isLoggedIn() {
+       return firebaseAuthObject.$getAuth();
+    }
+    function sendWelcomeEmail(emailAddress) {
+       firebaseDataService.emails.push({
+           emailAddress: emailAddress
+       });
+    }
+}
+
+// Retrieve Firebase Messaging object.
+const messaging = firebase.messaging();
+// Add the public key generated from the console here.
+messaging.usePublicVapidKey("BGIVTt3A3MEuQ2BUzGPQNV8gayRbsWkbCxPaJVQRZRR9FfeA63GkoskeIigC2ZyrA-iWgJ1PRYBqmG7FWJQJ9lE");
+// Get Instance ID token. Initially this makes a network call, once retrieved
+// subsequent calls to getToken will return from cache.
+messaging.getToken().then((currentToken) => {
+  if (currentToken) {
+    sendTokenToServer(currentToken);
+    updateUIForPushEnabled(currentToken);
+  } else {
+    // Show permission request.
+    console.log('No Instance ID token available. Request permission to generate one.');
+    // Show permission UI.
+    updateUIForPushPermissionRequired();
+    setTokenSentToServer(false);
+  }
+}).catch((err) => {
+  console.log('An error occurred while retrieving token. ', err);
+  showToken('Error retrieving Instance ID token. ', err);
+  setTokenSentToServer(false);
+});
+// The topic name can be optionally prefixed with "/topics/".
+var topic = "/topics/Android_Development",
+var topic = "/topics/Career_Planning",
+var topic = "/topics/Cloud_Engineering",
+var topic = "/topics/Digital_marketing",
+var topic = "/topics/entrepreneurship",
+var topic = "/topics/Gardening",
+var topic = "/topics/Learning_Language_skills",
+var topic = "/topics/Mobile_Web_Development",
+var topic = "/topics/Parenting-Course",
+var topic = "/topics/Technology";
+
+var message = {
+  data: {
+    score: '850',
+    time: '2:45'
+  },
+
+topics: 
+
+Android_Development,Career_Planning,Cloud_Engineering,Digital_marketing,entrepreneurship,Gardening,leadership,Learning_Language_skills,Mobile_Web_Development,ParentingCourse,Technology,
+};
+
+// Send a message to devices subscribed to the provided topic.
+admin.messaging().send(message)
+  .then((response) => {
+    // Response is a message ID string.
+    console.log('Successfully sent message:', response);
+  })
+  .catch((error) => {
+    console.log('Error sending message:', error);
+  });
+</script>
+</div>
         <script src="main.dart.js"></script>
     </body>
 </html>
