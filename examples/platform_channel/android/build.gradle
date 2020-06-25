@@ -31,3 +31,295 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+{
+            "project_info" {
+                "project_number" "61216389060",
+                        "firebase_url" "https://marine-infinity-244511.firebaseio.com"
+                "project_id" "marine-infinity-244511",
+                        "storage_bucket" "marine-infinity-244511.appspot.com"
+            }
+            "client"[
+                    {
+                        "client_info" {
+                            "mobilesdk_app_id" "1:61216389060:android:a34706310a2c4f78",
+                                    "android_client_info" {
+                                        "package_name" "com.GladstarGiftedandTalentedSchool_9453692"
+                                    }
+                        }
+                        "oauth_client"[
+                                {
+                                    "client_id" "61216389060-4u847t7dkd80gbvrlk1turov9npmgpmt.apps.googleusercontent.com",
+                                            "client_type" 3
+                                }
+                        ]
+                        "api_key"[
+                                {
+                                    "current_key" "AIzaSyCVgTBrHMK808-huXDbEsx5nDmyPwbxiLI"
+                                }
+                        ]
+                        "services" {
+                            "appinvite_service" {
+                                "other_platform_oauth_client"[
+                                        {
+                                            "client_id" "61216389060-4u847t7dkd80gbvrlk1turov9npmgpmt.apps.googleusercontent.com",
+                                                    "client_type" 3
+                                        }
+                                ]
+                            }
+                        }
+                        "admob_app_id" "ca-app-pub-7518766331039540~2240433268"
+                    }
+            ]
+            "configuration_version" "1"
+        }
+
+
+dependencies {
+    implementation project(':shared-module')
+
+    application project(':mobile')
+    wearApp project(':wear')
+
+    androidTestApi('com.android.support.test.espresso:espresso-core:3.0.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testApi 'junit:junit:4.12'
+}
+buildscript {
+    dependencies {
+        // Add this line
+        classpath 'com.google.gms:google-services:4.3.2'
+    }
+}
+{
+    "project_info" {
+        "project_number" "61216389060"
+        "firebase_url" "https://marine-infinity-244511.firebaseio.com"
+        "project_id" "marine-infinity-244511"
+        "storage_bucket" "marine-infinity-244511.appspot.com"
+    }
+    "client"[
+            {
+                "client_info" {
+                    "mobilesdk_app_id" "1:61216389060:android:a34706310a2c4f78",
+                            "android_client_info" {
+                                "package_name" "com.GladstarGiftedandTalentedSchool_9453692"
+                            }
+                }
+                "oauth_client"[
+                        {
+                            "client_id" "61216389060-4u847t7dkd80gbvrlk1turov9npmgpmt.apps.googleusercontent.com",
+                                    "client_type" 3
+                        }
+                ]
+                "api_key"[
+                        {
+                            "current_key" "AIzaSyCVgTBrHMK808-huXDbEsx5nDmyPwbxiLI"
+                        }
+                ]
+                "services" {
+                    "appinvite_service" {
+                        "other_platform_oauth_client"[
+                                {
+                                    "client_id" "61216389060-4u847t7dkd80gbvrlk1turov9npmgpmt.apps.googleusercontent.com",
+                                            "client_type" 3
+                                }
+                        ]
+                    }
+                }
+                "admob_app_id" "ca-app-pub-7518766331039540~2240433268"
+            }
+    ]
+    "configuration_version" "1"
+} dependencies {
+
+    implementation 'com.android.billingclient:billing:2.0.3'
+}
+lateinit var billingClient BillingClient
+
+billingClient = BillingClient.newBuilder(context).setListener(this).build()
+billingClient.startConnection(object: BillingClientStateListener {
+    override fun onBillingSetupFinished(billingResult: BillingResult) {
+        if (billingResult.responseCode == BillingResponse.OK) {
+            // The BillingClient is ready. You can query purchases here.
+        }
+    }
+    disconnected = override fun onBillingServiceDisconnected() {
+        // Try to restart the connection on the next request to
+        // Google Play by calling the startConnection() method.
+    }
+    disconnected
+})
+var1
+skuList.add("premium_upgrade")
+skuList.add("projects/marine-infinity-244511/topics/Android_Development")
+skuList.add("projects/marine-infinity-244511/topics/Career_Planning")
+skuList.add("projects/marine-infinity-244511/topics/Cloud_Engineering")
+skuList.add("projects/marine-infinity-244511/topics/Digital_marketing")
+skuList.add("projects/marine-infinity-244511/topics/entrepreneurship")
+skuList.add("projects/marine-infinity-244511/topics/Gardening")
+skuList.add("projects/marine-infinity-244511/topics/leadership")
+skuList.add("projects/marine-infinity-244511/topics/Learning_Language_skills")
+skuList.add("projects/marine-infinity-244511/topics/Mobile_Web_Development")
+skuList.add("projects/marine-infinity-244511/topics/Parenting-Course")
+skuList.add("projects/marine-infinity-244511/topics/Technology")
+val params = SkuDetailsParams.newBuilder()
+params.setSkusList(skuList).setType(SkuType.SUBS)
+billingClient.querySkuDetailsAsync(params.build(), { final billingResult, final skuDetailsList ->
+    // Process the result.
+})
+if (result.responseCode == BillingResponse.OK && skuDetailsList != null) {
+    final def each = skuDetailsList.each { final skuDetails ->
+        val sku = skuDetails.sku
+        val price = skuDetails.price
+        final def var = subPrice = price
+        if ("premium_upgrade" == sku) {
+            premiumUpgradePrice = price
+        } else if ("projects/marine-infinity-244511/topics/Android_Development" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Career_Planning" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Cloud_Engineering" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Digital_marketing" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/entrepreneurship" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Gardening" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/leadership" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Learning_Language_skills" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Mobile_Web_Development" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Parenting-Course" == sku) {
+            var
+        } else if ("projects/marine-infinity-244511/topics/Technology" == sku) {
+            var
+        }
+    }
+    each
+}
+// Retrieve a value for "skuDetails" by calling querySkuDetailsAsync().
+val flowParams = BillingFlowParams.newBuilder()
+        .setSkuDetails(skuDetails)
+        .build()
+final def var = val responseCode
+var
+final def var2 = responseCode = billingClient.launchBillingFlow(activity, flowParams)
+var2
+val client val BillingClient = val acknowledgePurchaseResponseListener: AcknowledgePurchaseResponseListener =
+
+        fun handlePurchase() {
+            if (purchase.purchaseState === PurchaseState.PURCHASED) {
+                // Grant entitlement to the user.
+
+
+                // Acknowledge the purchase if it hasn't already been acknowledged.
+                if (!purchase.isAcknowledged) {
+                    val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                            .setPurchaseToken(purchase.purchaseToken)
+                            .build()
+                    client.acknowledgePurchase(acknowledgePurchaseParams, acknowledgePurchaseResponseListener)
+                }
+            }
+            billingClient handlePurchase(purchase: Purchase) {
+                if (purchase.purchaseState == PurchaseState.PURCHASED) {
+                    // Grant the item to the user, and then acknowledge the purchase
+                } else if (purchase.purchaseState == PurchaseState.PENDING) {
+                    // Here you can confirm to the user that they've started the pending
+                    // purchase, and to complete it, they should follow instructions that
+                    // are given to them. You can also choose to remind the user in the
+                    // future to complete the purchase if you detect that it is still
+                    // pending.
+                }
+            }
+
+
+            val BillingClient = val acknowledgePurchaseResponseListener: AcknowledgePurchaseResponseListener =
+
+                    fun handlePurchase() {
+                        if (purchase.purchaseState === PurchaseState.PURCHASED) {
+                            // Grant entitlement to the user.
+
+
+                            // Acknowledge the purchase if it hasn't already been acknowledged.
+                            if (!purchase.isAcknowledged) {
+                                val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                                        .setPurchaseToken(purchase.purchaseToken)
+                                        .build()
+                                client.acknowledgePurchase(acknowledgePurchaseParams, acknowledgePurchaseResponseListener)
+                            }
+                        }
+                        billingClientf handlePurchase(purchase: Purchase) {
+                            if (purchase.purchaseState == PurchaseState.PURCHASED) {
+                                // Grant the item to the user, and then acknowledge the purchase
+                            } else if (purchase.purchaseState == PurchaseState.PENDING) {
+                                // Here you can confirm to the user that they've started the pending
+                                // purchase, and to complete it, they should follow instructions that
+                                // are given to them. You can also choose to remind the user in the
+                                // future to complete the purchase if you detect that it is still
+                                // pending.
+                            }
+                        }
+
+                    }
+            val BillingClient = val acknowledgePurchaseResponseListener: AcknowledgePurchaseResponseListener =
+
+                    fun handlePurchase() {
+                        if (purchase.purchaseState === PurchaseState.PURCHASED) {
+                            // Grant entitlement to the user.
+
+
+                            // Acknowledge the purchase if it hasn't already been acknowledged.
+                            if (!purchase.isAcknowledged) {
+                                val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                                        .setPurchaseToken(purchase.purchaseToken)
+                                        .build()
+                                client.acknowledgePurchase(acknowledgePurchaseParams, acknowledgePurchaseResponseListener)
+                            }
+                        }
+                        billingClient handlePurchase(purchase: Purchase) {
+                            if (purchase.purchaseState == PurchaseState.PURCHASED) {
+                                // Grant the item to the user, and then acknowledge the purchase
+                            } else if (purchase.purchaseState == PurchaseState.PENDING) {
+                                // Here you can confirm to the user that they've started the pending
+                                // purchase, and to complete it, they should follow instructions that
+                                // are given to them. You can also choose to remind the user in the
+                                // future to complete the purchase if you detect that it is still
+                                // pending.
+                            }
+                        }
+
+
+                        val BillingClient = val acknowledgePurchaseResponseListener: AcknowledgePurchaseResponseListener =
+
+                                fun handlePurchase() {
+                                    if (purchase.purchaseState === PurchaseState.PURCHASED) {
+                                        // Grant entitlement to the user.
+
+
+                                        // Acknowledge the purchase if it hasn't already been acknowledged.
+                                        if (!purchase.isAcknowledged) {
+                                            val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                                                    .setPurchaseToken(purchase.purchaseToken)
+                                                    .build()
+                                            client.acknowledgePurchase(acknowledgePurchaseParams, acknowledgePurchaseResponseListener)
+                                        }
+                                    }
+                                    billingClientf handlePurchase(purchase: Purchase) {
+                                        if (purchase.purchaseState == PurchaseState.PURCHASED) {
+                                            // Grant the item to the user, and then acknowledge the purchase
+                                        } else if (purchase.purchaseState == PurchaseState.PENDING) {
+                                            // Here you can confirm to the user that they've started the pending
+                                            // purchase, and to complete it, they should follow instructions that
+                                            // are given to them. You can also choose to remind the user in the
+                                            // future to complete the purchase if you detect that it is still
+                                            // pending.
+                                        }
+                                    }
+
+                                }
+                    }
